@@ -13,8 +13,10 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <RepositoryUrl>https://github.com/JoseSebastianGarcia/Derify.git</RepositoryUrl>
     <PackageTags>diagram;relationship;entity;sql;server;derify;core;netcore</PackageTags>
     <PackageIcon>Flow Chart.png</PackageIcon>
-    <Company>Jose Sebastián Garcia</Company>
+    <Company></Company>
     <Product>Derify</Product>
+    <Authors>Jose Sebastian Garcia</Authors>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
