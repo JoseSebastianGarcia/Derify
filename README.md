@@ -8,3 +8,5 @@ Next, you can run the test solution (you will need an sql server instance) and v
 
 That's all, automatically the middleware will generate an ERD from your database.
 
+## Diagramming engine
+Credits to mermaid.js
