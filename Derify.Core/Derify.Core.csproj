@@ -18,6 +18,7 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <Authors>Jose Sebastian Garcia</Authors>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
