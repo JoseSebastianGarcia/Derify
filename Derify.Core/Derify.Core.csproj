@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -12,13 +12,12 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <PackageProjectUrl>https://github.com/JoseSebastianGarcia/Derify</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JoseSebastianGarcia/Derify.git</RepositoryUrl>
     <PackageTags>diagram;relationship;entity;sql;server;derify;core;netcore</PackageTags>
-    <PackageIcon>Flow Chart.png</PackageIcon>
     <Company></Company>
     <Product>Derify</Product>
     <Authors>Jose Sebastian Garcia</Authors>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -49,13 +48,6 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
 
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\..\Desktop\Flow Chart.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>

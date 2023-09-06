@@ -55,7 +55,7 @@ namespace Derify.Core.Services
                 foreach (string tableName in tableNames)
                 {
                     IEnumerable<string> relations = relationEntities.Where(re => re.TableName == tableName && !string.IsNullOrEmpty(re.ReferencedBy)).Select(re => {
-                        return $"   {re.ReferencedBy} ||--o{{ {tableName} : \"\"";
+                        return $"   \"{re.ReferencedBy}\" ||--o{{ \"{tableName}\" : \"\"";
                     });
 
                     foreach (string relation in relations)
