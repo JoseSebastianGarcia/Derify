@@ -34,8 +34,12 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="wwwroot\index.html" />
-    <EmbeddedResource Include="wwwroot\mermaid.min.js" />
+    <EmbeddedResource Include="wwwroot\index.html">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wwwroot\mermaid.min.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

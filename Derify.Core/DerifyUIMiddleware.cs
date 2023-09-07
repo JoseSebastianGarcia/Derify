@@ -9,10 +9,11 @@ namespace Derify.Core
 {
     public class DerifyUIMiddleware
     {
+        private readonly DerifyOptions _options;
 
-        public DerifyUIMiddleware(RequestDelegate requestDelegate)
+        public DerifyUIMiddleware(RequestDelegate next, DerifyOptions options)
         {
-
+            _options = options;
         }
 
         public void GetStream(HttpContext context, string fileName, string mermaidCode = "") 
@@ -53,9 +54,12 @@ namespace Derify.Core
                         if(mermaidCode != string.Empty)
                             htmlBuilder.Replace("$(mermaid.content)", mermaidCode);
 
+                        htmlBuilder.Replace("$(mermaid.path)", _options.PathMatch.Value.Substring(1, _options.PathMatch.Value.Length - 1));
+
                         context.Response.StatusCode = 200;
                         context.Response.ContentType = GetContentType(fileName);
                         context.Response.WriteAsync(htmlBuilder.ToString(), Encoding.UTF8);
+                        
                     }
                 }
             }
