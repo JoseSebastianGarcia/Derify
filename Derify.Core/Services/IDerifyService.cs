@@ -8,6 +8,6 @@ namespace Derify.Core.Services
 {
     public interface IDerifyService
     {
-        string GetMermaidCode();
+        string GetCode();
     }
 }

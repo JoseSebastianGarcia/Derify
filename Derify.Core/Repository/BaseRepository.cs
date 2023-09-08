@@ -31,7 +31,8 @@ namespace Derify.Core.Repository
                         WHEN fk.name IS NOT NULL THEN 1
                         ELSE 0
                     END AS [EsFK],
-                    OBJECT_NAME(fk.referenced_object_id) AS [ReferenciadoPor]
+                    OBJECT_NAME(fk.referenced_object_id) AS [ReferenciadoPor],
+                case when c.is_nullable = 1 then 'null' else '' end [Nulleable]
                 FROM sys.tables t
                 INNER JOIN sys.columns c ON c.object_id = t.object_id
                 INNER JOIN sys.types ty ON ty.user_type_id = c.user_type_id
@@ -71,7 +72,8 @@ namespace Derify.Core.Repository
                     IsPrimaryKey = Convert.ToBoolean(dr["EsPK"]),
                     IsUnique = Convert.ToBoolean(dr["EsUnico"]),
                     IsForeignKey = Convert.ToBoolean(dr["EsFK"]),
-                    ReferencedBy = Convert.ToString(dr["ReferenciadoPor"]) ?? string.Empty
+                    ReferencedBy = Convert.ToString(dr["ReferenciadoPor"]) ?? string.Empty,
+                    Nulleable = Convert.ToString(dr["Nulleable"]) ?? string.Empty
                 }) ;
                 
             }
