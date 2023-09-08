@@ -16,58 +16,88 @@ namespace Derify.Core.Services
             _baseRepository = repository;
         }
 
-        public string GetMermaidCode() 
+        public string GetCode()
         {
-            StringBuilder mermaid = new StringBuilder();
+            StringBuilder code = new StringBuilder();
 
-            try
+            List<RelationEntity> relationEntities = _baseRepository.GetAll();
+            IEnumerable<string> tableNames = relationEntities.Select(re => re.TableName).Distinct();
+            
+            int tableCount = 0;
+            int topPos= 100;
+            foreach (string tableName in tableNames)
             {
-                List<RelationEntity> relationEntities = _baseRepository.GetAll();
+                IEnumerable<string> columns = relationEntities.Where(re => re.TableName == tableName).Select(re => {
+                    List<string> constraints = new List<string>();
+                    if (re.IsPrimaryKey) constraints.Add("PK");
+                    if (re.IsForeignKey) constraints.Add("FK");
+                    if (re.IsUnique) constraints.Add("UK");
 
-                mermaid.AppendLine("erDiagram");
+                    string constraint = string.Join(",", constraints);
 
-                IEnumerable<string> tableNames = relationEntities.Select(re => re.TableName).Distinct();
-                
-                //Creo las entidades
-                foreach (string tableName in tableNames) 
+                    return $@"
+                                <tr>
+                                    <td class=""gray"">{constraint}</td>
+                                    <td>{re.FieldName}</td>
+                                    <td class=""accent"">{re.FieldDataType}</td>
+                                    <td>{re.Nulleable}</td>
+                                </tr>
+                    ";
+                });
+
+                string startEntity = $@"
+                    <div class=""card"" id=""{tableName}"" style=""left: {(tableCount * 400)+100}px; top: {topPos}px;"">
+                        <div class=""card--title"">
+                            {tableName}
+                        </div>
+                        <div class=""card--body"">
+                            <table>
+                                <tr>
+                                    <th>Key</th>
+                                    <th>Property</th>
+                                    <th>Type</th>
+                                    <th>Nullable</th>
+                                </tr>
+                ";
+
+                code.AppendLine(startEntity);
+
+                foreach (string column in columns)
+                    code.AppendLine(column);
+
+                string endEntity = $@"
+                            </table>
+                        </div>
+                    </div>
+                ";
+                code.AppendLine(endEntity);
+
+
+                if (tableCount < 3)
                 {
-                    mermaid.AppendLine($"   \"{tableName}\" {{");
-                    
-                    IEnumerable<string> columns = relationEntities.Where(re => re.TableName == tableName).Select(re=> {
-                        List<string> constraints = new List<string>();
-                        if (re.IsPrimaryKey) constraints.Add("PK");
-                        if (re.IsForeignKey) constraints.Add("FK");
-                        if (re.IsUnique) constraints.Add("UK");
-
-                        string constraint = string.Join(",", constraints);
-
-                        return $"       {re.FieldName} {re.FieldDataType} {constraint}";
-                    });
-                    
-                    foreach (string column in columns) 
-                        mermaid.AppendLine(column);
-
-
-                    mermaid.AppendLine("    }");
+                    tableCount++;
                 }
-
-                //Conecto las entidades
-                foreach (string tableName in tableNames)
+                else
                 {
-                    IEnumerable<string> relations = relationEntities.Where(re => re.TableName == tableName && !string.IsNullOrEmpty(re.ReferencedBy)).Select(re => {
-                        return $"   \"{re.ReferencedBy}\" ||--o{{ \"{tableName}\" : \"\"";
-                    });
-
-                    foreach (string relation in relations)
-                        mermaid.AppendLine(relation);
+                    tableCount = 0;
+                    topPos += 400;
                 }
             }
-            catch (Exception ex) 
+
+            //Conecto las entidades
+            foreach (string tableName in tableNames)
             {
-                mermaid.AppendLine(ex.Message);
+                IEnumerable<string> relations = relationEntities.Where(re => re.TableName == tableName && !string.IsNullOrEmpty(re.ReferencedBy)).Select(re => {
+                    return $"<div source=\"{re.ReferencedBy}\" target=\"{tableName}\" class=\"link\"></div>";
+                });
+
+                foreach (string relation in relations)
+                    code.AppendLine(relation);
             }
 
-            return mermaid.ToString();
+            return code.ToString();
         }
+
+        
     }
 }

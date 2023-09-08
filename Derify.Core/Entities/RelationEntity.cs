@@ -15,5 +15,6 @@ namespace Derify.Core.Entities
         public bool IsUnique { set; get; }
         public bool IsForeignKey { set; get; }
         public string? ReferencedBy { get; set; }
+        public string Nulleable { get; set; } = string.Empty;
     }
 }

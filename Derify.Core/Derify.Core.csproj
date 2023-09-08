@@ -21,25 +21,24 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\js\**" />
-    <EmbeddedResource Remove="wwwroot\js\**" />
-    <None Remove="wwwroot\js\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Index.html" />
     <None Remove="main.js" />
+    <None Remove="wwwroot\css\style.css" />
     <None Remove="wwwroot\index.html" />
+    <None Remove="wwwroot\js\jquery-ui.min.js" />
+    <None Remove="wwwroot\js\jquery.min.js" />
+    <None Remove="wwwroot\js\script.js" />
     <None Remove="wwwroot\mermaid.min.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="wwwroot\css\style.css" />
     <EmbeddedResource Include="wwwroot\index.html">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="wwwroot\mermaid.min.js">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="wwwroot\js\jquery-ui.min.js" />
+    <EmbeddedResource Include="wwwroot\js\jquery.min.js" />
+    <EmbeddedResource Include="wwwroot\js\script.js" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,7 +16,7 @@ namespace Derify.Core
             _options = options;
         }
 
-        public void GetStream(HttpContext context, string fileName, string mermaidCode = "") 
+        public void GetStream(HttpContext context, string fileName, string code = "") 
         {
             string resourcePrefix = "Derify.Core.wwwroot";
 
@@ -51,8 +51,8 @@ namespace Derify.Core
 
                     if (htmlBuilder != null)
                     {
-                        if(mermaidCode != string.Empty)
-                            htmlBuilder.Replace("$(mermaid.content)", mermaidCode);
+                        if(code != string.Empty)
+                            htmlBuilder.Replace("$(mermaid.content)", code);
 
                         htmlBuilder.Replace("$(mermaid.path)", _options.PathMatch.Value.Substring(1, _options.PathMatch.Value.Length - 1));
 
@@ -97,7 +97,7 @@ namespace Derify.Core
             var request = httpContext.Request;
 
             if(!request.Path.HasValue)
-                GetStream(httpContext,"index.html",service.GetMermaidCode());
+                GetStream(httpContext,"index.html",service.GetCode());
             else
                 GetStream(httpContext, request.Path.Value.TrimStart('/'));
 
