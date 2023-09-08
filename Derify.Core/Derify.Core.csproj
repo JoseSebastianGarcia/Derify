@@ -15,9 +15,9 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <Company></Company>
     <Product>Derify</Product>
     <Authors>Jose Sebastian Garcia</Authors>
-    <AssemblyVersion>2.0.1</AssemblyVersion>
-    <FileVersion>2.0.1</FileVersion>
-    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.2</AssemblyVersion>
+    <FileVersion>2.0.2</FileVersion>
+    <Version>2.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
