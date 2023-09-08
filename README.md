@@ -13,4 +13,5 @@ Credits to mermaid.js
 
 
 ## Snapshot
-![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/91c80f95-b031-49e5-b442-9aeff443ac47)
+![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/3eff112b-d467-4c5a-b173-356964e029a3)
+
