@@ -54,13 +54,13 @@ body
     font-family: 'Open Sans', sans-serif;
     text-align: left;
 }
-.card--body table tr th
-{
-    padding: 10px;
-    font-weight: 500;
-    color: #636363;
-    border-bottom: 1px solid #dedede;
-}
+    .card--body table tr th {
+        padding: 10px;
+        font-weight: 500;
+        color: #ffffff;
+        border-bottom: 1px solid #dedede;
+        background: #3f0a71;
+    }
 .card--body table tr td
 {
     padding: 10px;
