@@ -15,10 +15,16 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <Company></Company>
     <Product>Derify</Product>
     <Authors>Jose Sebastian Garcia</Authors>
-    <AssemblyVersion>2.0.2</AssemblyVersion>
-    <FileVersion>2.0.2</FileVersion>
-    <Version>2.0.2</Version>
+    <AssemblyVersion>2.0.3</AssemblyVersion>
+    <FileVersion>2.0.3</FileVersion>
+    <Version>2.0.3</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\img\**" />
+    <EmbeddedResource Remove="wwwroot\img\**" />
+    <None Remove="wwwroot\img\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Index.html" />
