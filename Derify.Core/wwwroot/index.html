@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Satisfy&display=swap" rel="stylesheet" />    
-    <link rel="stylesheet" href="$(mermaid.path)/css/style.css">
-    <script src="$(mermaid.path)/js/jquery.min.js"></script>
-    <script src="$(mermaid.path)/js/jquery-ui.min.js"></script>
-    <script src="$(mermaid.path)/js/script.js"></script>    
+    <link rel="stylesheet" href="$(mermaid.path)/css/style.css?v=2">
+    <script src="$(mermaid.path)/js/jquery.min.js?v=2"></script>
+    <script src="$(mermaid.path)/js/jquery-ui.min.js?v=2"></script>
+    <script src="$(mermaid.path)/js/script.js?v=2"></script>    
 </head>
 <body>
     <div class="title">
@@ -19,6 +19,16 @@
     <div id="layer">
         <div id="svg-container"></div>
         $(mermaid.content)
+    </div>
+    <div class="searchPanel hide">
+        <div class="dialog">
+            <input type="text" placeholder="Nombre del campo que estas buscando" id="searchText" />
+            <img id="clearSelection" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAVlJREFUaEPt2P9NwlAYheGOwAiMwAiM4iiM4gaOoBvgCGwAG+h3Ek7S3LSU9vvZ5L7JSfSf3j4SsTj0er2ynWRfsj/ZVXaW7S4g7jIgxvuQ7aY5BLcLzBKCK415F8GVxKxFcKUwWxFcCYwWwaVirBBcCsYawYVivBBcCMYbwbliohCcCyYaweFcs7IQ2LfMpEwEp+4gw+cIXOz3ufYQ7+FMVS0C32PRGNWHsSkEw9efsvZAj6netV4hxnljQhDMCxOKYNaYFATD4e0NbVkqgmkxJRBsK6YUguGmHrL2ZudWEsHwWPMOpjSCLWFUCMS3S08Em8OoEYhPsjgkoqPsJjNFIF406j/juHFzBLrIcFG8Mt6vihuC8ffEE+OOYJ6YMATzwIQjmCUmDcEsMOkIpsGMEbhOevhrvxZTDoHwyLIGUxLBxpjI4QdnHjA/sqkDvYaHy16vt7lh+AeIjKUceciNMAAAAABJRU5ErkJggg==" />
+        </div>
+        <div class="dimmer"></div>
+    </div>
+    <div class="searchButton">
+        <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAotJREFUaEPtmI1N7DAQhK8ESqAEOoAS6AA6gA6gBDqADqAD6AA6gA6gA9gPaaRR5OSSy9q5SBlp9N7lTHZnf7w+7zZs2LBhCk6C5wWuAqfBm+B78HeAr0HWIfaogEOPwZLTQ/wO3gWPQtBlEIfk3E/wKchzMuTg83WQ71nngs6Ci4FouoD74Njosu4hqL+HiGwOnJYDH8Fu9GlshFJy9ERfxHn+FVxEDGUjw5SJZ+Eq+BnU9yLC+8DfEwytbVJmGFVPYFwi+JfIyxlIpN+ClJCLLYHv1Te8f9/62SADGMOoygmjvuXi/EVwKsiE3jGUwdnA8ZIhz8QtD2ZAgaqaFZzECNmQEZozSwTwYFVrfJUPURPU2JRTFtT4L/+fkkEGFCl2LeA1fUhP9EGZp7zSgaNyWk2uWcLulAm3lY7Sy9WYmWUF3FZmpv8xJKTGVtlUCEg3FHBbVYV0z1XZ6AtaGvTy2gc7bSLMqyqgqTHgc6QGSvMqFb6/+/GBUuBZRtM3mew4rxOqO61jSsYkfg7yLj8GVYHqF/rvBrIy17A3eca5bRCeFc5ZWVGjpChP3pt9UuiFn7FozLliEKEGJ0hNfiEKfnwnM4ca10ahd9Xe2otwMZCLhrHDknV+F0YmOFWTXS4tmmYFYFA9I7LzcJPITYqEsY7PpZtIekKOazMhS1xkIAqODdAsEEUc6AraR9Z3d6dSYMRmZYcgjDFP+pzhORObdX2bhJcsvxYXu/dy0MziWKi8EAEQ7Pdei4mZCgnxObVKMT7hfU6tUoxfcK9ejH5KD4lhm26yNc/FkBg91/XU0YPy6Yph3qxOCHAxTuaSsrQaIMYHLf+fMp+OCjQ2pYSA1WViw4YN6djt/gAZbTUstahytgAAAABJRU5ErkJggg==" />
     </div>
 </body>
 </html>

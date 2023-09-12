@@ -1,5 +1,58 @@
 $(document).ready(function(){
-    
+    $(".searchButton").click(function () {
+        $(".searchPanel").removeClass("hide");
+        $("#searchText").focus();
+    });
+
+    $(".dimmer").click(function () {
+        $(".searchPanel").addClass("hide");
+
+        //Limpio la búsqueda
+        var elementosConTexto = $("tr");
+        elementosConTexto.css("background-color", "");
+        var elementosConTexto = $(".card");
+        elementosConTexto.css("filter", "");
+        $("#searchText").val("");
+    });
+
+    $("#clearSelection").click(function () {
+        $(".searchPanel").addClass("hide");
+
+        //Limpio la búsqueda
+        var elementosConTexto = $("tr");
+        elementosConTexto.css("background-color", "");
+        var elementosConTexto = $(".card");
+        elementosConTexto.css("filter", "");
+        $("#searchText").val("");
+    });
+
+    $(document).keypress(function (evt) {
+        if (evt.ctrlKey && evt.code == "KeyB") {
+            evt.preventDefault();
+            $(".searchPanel").removeClass("hide");
+            $("#searchText").focus();
+        }
+
+        if (evt.code == "Enter") {
+            evt.preventDefault();
+            $(".searchPanel").addClass("hide");
+            var searchText = $("#searchText").val();
+
+            //Limpio la búsqueda
+            var elementosConTexto = $("tr");
+            elementosConTexto.css("background-color", "");
+            var elementosConTexto = $(".card");
+            elementosConTexto.css("filter", "");
+
+            //Realizo nueva búsqueda
+            if (searchText.trim() != "") {
+                var elementosConTexto = $("tr:contains('" + searchText + "')");
+                elementosConTexto.css("background-color", "#FFFFCC");
+                var elementosConTexto = $(".card:not(:contains('" + searchText + "'))");
+                elementosConTexto.css("filter", "grayscale(80%)");
+            }
+        }
+    });    
 
     $(".card").draggable({
         scroll: true,
