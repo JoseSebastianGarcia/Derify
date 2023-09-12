@@ -13,5 +13,5 @@ Written manually with jquery and jqueryui
 
 
 ## Snapshot
-![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/3eff112b-d467-4c5a-b173-356964e029a3)
+![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/e11415b7-a013-4561-ab6e-5406b7784a52)
 
