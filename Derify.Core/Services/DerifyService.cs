@@ -41,6 +41,7 @@ namespace Derify.Core.Services
                                     <td>{re.FieldName}</td>
                                     <td class=""accent"">{re.FieldDataType}</td>
                                     <td>{re.Nulleable}</td>
+                                    <td>{re.Default}</td>
                                 </tr>
                     ";
                 });
@@ -57,6 +58,7 @@ namespace Derify.Core.Services
                                     <th>Property</th>
                                     <th>Type</th>
                                     <th>Nullable</th>
+                                    <th>Default value</th>
                                 </tr>
                 ";
 

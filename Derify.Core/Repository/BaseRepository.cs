@@ -32,7 +32,11 @@ namespace Derify.Core.Repository
                         ELSE 0
                     END AS [EsFK],
                     OBJECT_NAME(fk.referenced_object_id) AS [ReferenciadoPor],
-                case when c.is_nullable = 1 then 'null' else '' end [Nulleable]
+                    CASE 
+                        WHEN c.is_nullable = 1 THEN 'null'
+                        ELSE ''
+                    END AS [Nulleable],
+                    replace(replace(dc.definition,'(',''),')','') AS [Default]
                 FROM sys.tables t
                 INNER JOIN sys.columns c ON c.object_id = t.object_id
                 INNER JOIN sys.types ty ON ty.user_type_id = c.user_type_id
@@ -40,6 +44,7 @@ namespace Derify.Core.Repository
                 LEFT JOIN sys.index_columns iu ON iu.object_id = c.object_id AND iu.column_id = c.column_id AND iu.index_id > 1
                 LEFT JOIN sys.foreign_key_columns fkc ON fkc.parent_object_id = t.object_id AND fkc.parent_column_id = c.column_id
                 LEFT JOIN sys.foreign_keys fk ON fk.object_id = fkc.constraint_object_id
+                LEFT JOIN sys.default_constraints dc ON dc.parent_object_id = c.object_id AND dc.parent_column_id = c.column_id
                 ORDER BY [NombreTabla], c.column_id;
             ";
 
@@ -73,7 +78,8 @@ namespace Derify.Core.Repository
                     IsUnique = Convert.ToBoolean(dr["EsUnico"]),
                     IsForeignKey = Convert.ToBoolean(dr["EsFK"]),
                     ReferencedBy = Convert.ToString(dr["ReferenciadoPor"]) ?? string.Empty,
-                    Nulleable = Convert.ToString(dr["Nulleable"]) ?? string.Empty
+                    Nulleable = Convert.ToString(dr["Nulleable"]) ?? string.Empty,
+                    Default = Convert.ToString(dr["Default"]) ?? string.Empty
                 }) ;
                 
             }
