@@ -13,5 +13,12 @@ Written manually with jquery and jqueryui
 
 
 ## Snapshot
-![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/e11415b7-a013-4561-ab6e-5406b7784a52)
+![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/e4782ef1-0bc4-4368-bd6b-25398da26c76)
+
+
+CTRL+B or magnifying glass
+![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/595e69b9-9a63-4e9b-a507-1d0fa449a21e)
+
+Now we can hightlight some column with certaint value
+![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/b74ce027-ee16-471f-88e8-321c5cdaa9d6)
 
