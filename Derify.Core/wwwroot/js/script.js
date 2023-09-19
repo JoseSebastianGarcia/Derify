@@ -6,12 +6,6 @@ $(document).ready(function(){
 
     $(".dimmer").click(function () {
         $(".searchPanel").addClass("hide");
-
-        //Limpio la búsqueda
-        var elementosConTexto = $("tr");
-        elementosConTexto.css("background-color", "");
-        var elementosConTexto = $(".card");
-        elementosConTexto.css("filter", "");
         $("#searchText").val("");
     });
 

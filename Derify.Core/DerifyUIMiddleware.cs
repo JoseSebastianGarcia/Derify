@@ -52,9 +52,9 @@ namespace Derify.Core
                     if (htmlBuilder != null)
                     {
                         if(code != string.Empty)
-                            htmlBuilder.Replace("$(mermaid.content)", code);
+                            htmlBuilder.Replace("$(content)", code);
 
-                        htmlBuilder.Replace("$(mermaid.path)", _options.PathMatch.Value.Substring(1, _options.PathMatch.Value.Length - 1));
+                        htmlBuilder.Replace("$(path)", _options.PathMatch.Value.Substring(1, _options.PathMatch.Value.Length - 1));
 
                         context.Response.StatusCode = 200;
                         context.Response.ContentType = GetContentType(fileName);

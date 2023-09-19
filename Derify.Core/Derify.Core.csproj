@@ -34,7 +34,6 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <None Remove="wwwroot\js\jquery-ui.min.js" />
     <None Remove="wwwroot\js\jquery.min.js" />
     <None Remove="wwwroot\js\script.js" />
-    <None Remove="wwwroot\mermaid.min.js" />
   </ItemGroup>
 
   <ItemGroup>
