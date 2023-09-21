@@ -82,7 +82,7 @@ namespace Derify.Core.Services
                 else
                 {
                     tableCount = 0;
-                    topPos += 600;
+                    topPos += 500;
                 }
             }
 

@@ -1,4 +1,20 @@
-$(document).ready(function(){
+$(document).ready(function () {
+    $("html").on("contextmenu", function (e) {
+        // Detiene la acción predeterminada del navegador (mostrar el menú contextual)
+        e.preventDefault();
+    });
+    $("tr").click(function (e) {
+        if (e.ctrlKey && e.button == 0) {
+            if ($(this).attr("highlight") == undefined || $(this).attr("highlight") == "") {
+                $(this).css("background-color", "#FFFFCC");
+                $(this).attr("highlight", "1");
+            }
+            else {
+                $(this).css("background-color", "");
+                $(this).attr("highlight", "");
+            }
+        }
+    });
     $(".searchButton").click(function () {
         $(".searchPanel").removeClass("hide");
         $("#searchText").focus();
