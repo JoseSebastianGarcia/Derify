@@ -47,7 +47,7 @@ namespace Derify.Core.Services
                 });
 
                 string startEntity = $@"
-                    <div class=""card"" id=""{tableName}"" style=""left: {(tableCount * 400)+100}px; top: {topPos}px;"">
+                    <div class=""card"" id=""{tableName}"" style=""left: {(tableCount * 450)+100}px; top: {topPos}px;"">
                         <div class=""card--title"">
                             {tableName}
                         </div>
@@ -82,7 +82,7 @@ namespace Derify.Core.Services
                 else
                 {
                     tableCount = 0;
-                    topPos += 400;
+                    topPos += 600;
                 }
             }
 
