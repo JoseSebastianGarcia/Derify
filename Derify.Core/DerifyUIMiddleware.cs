@@ -16,7 +16,7 @@ namespace Derify.Core
             _options = options;
         }
 
-        public void GetStream(HttpContext context, string fileName, string code = "") 
+        public async Task GetStream(HttpContext context, string fileName, string code = "") 
         {
             string resourcePrefix = "Derify.Core.wwwroot";
 
@@ -56,10 +56,13 @@ namespace Derify.Core
 
                         htmlBuilder.Replace("$(path)", _options.PathMatch.Value.Substring(1, _options.PathMatch.Value.Length - 1));
 
+                        byte[] buffer = UTF8Encoding.UTF8.GetBytes(htmlBuilder.ToString());
+
                         context.Response.StatusCode = 200;
                         context.Response.ContentType = GetContentType(fileName);
-                        context.Response.WriteAsync(htmlBuilder.ToString(), Encoding.UTF8);
-                        
+                        context.Response.ContentLength = buffer.Length;
+                        await context.Response.Body.WriteAsync(buffer,0, buffer.Length);
+                        return;
                     }
                 }
             }
@@ -92,19 +95,24 @@ namespace Derify.Core
                     throw new FormatException("Formato de archivo inválido");
             }
         }
-        public Task Invoke(HttpContext httpContext, IDerifyService service)
+        private bool IsValidHttpVerb(string verb)
+            => verb.Equals("GET", StringComparison.OrdinalIgnoreCase);
+
+        public async Task Invoke(HttpContext httpContext, IDerifyService service)
         {
             var request = httpContext.Request;
 
-            if(!request.Path.HasValue)
-                GetStream(httpContext,"index.html",service.GetCode());
-            else
-                GetStream(httpContext, request.Path.Value.TrimStart('/'));
+            if (IsValidHttpVerb(httpContext.Request.Method))
+            {
+                if (!request.Path.HasValue)
+                    await GetStream(httpContext, "index.html", service.GetCode());
+                else
+                    await GetStream(httpContext, request.Path.Value.TrimStart('/'));
+            }
 
-
-            return Task.CompletedTask;
+            return;
         }
 
-        
+
     }
 }
