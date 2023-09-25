@@ -22,3 +22,5 @@ CTRL+B or magnifying glass
 Now we can hightlight some column with certaint value
 ![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/b74ce027-ee16-471f-88e8-321c5cdaa9d6)
 
+You can select many fields as you want by pressing **Ctrl button** and **left mouse click**
+
