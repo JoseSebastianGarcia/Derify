@@ -17,10 +17,12 @@ Written manually with jquery and jqueryui
 
 
 CTRL+B or magnifying glass
-![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/595e69b9-9a63-4e9b-a507-1d0fa449a21e)
+![a](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/f5217f74-32ea-4c9b-8e03-d1f95c4c9c00)
+
 
 Now we can hightlight some column with certaint value
-![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/b74ce027-ee16-471f-88e8-321c5cdaa9d6)
+![b](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/f05cbbc4-7925-4e1a-98d8-20593060c60e)
+
 
 You can select many fields as you want by pressing **Ctrl button** and **left mouse click**
 
