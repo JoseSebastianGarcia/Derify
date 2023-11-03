@@ -46,23 +46,25 @@ $(document).ready(function () {
         if (evt.code == "Enter") {
             evt.preventDefault();
             $(".searchPanel").addClass("hide");
-            var searchText = $("#searchText").val();
-
-            //Limpio la búsqueda
-            var elementosConTexto = $("tr");
-            elementosConTexto.css("background-color", "");
-            var elementosConTexto = $(".card");
-            elementosConTexto.css("filter", "");
-
-            //Realizo nueva búsqueda
-            if (searchText.trim() != "") {
-                var elementosConTexto = $("tr:contains('" + searchText + "')");
-                elementosConTexto.css("background-color", "#FFFFCC");
-                var elementosConTexto = $(".card:not(:contains('" + searchText + "'))");
-                elementosConTexto.css("filter", "grayscale(80%)");
-            }
+            Search($("#searchText").val());
         }
     });    
+
+    function Search(searchText) {
+        //Limpio la búsqueda
+        var elementosConTexto = $("tr");
+        elementosConTexto.css("background-color", "");
+        var elementosConTexto = $(".card");
+        elementosConTexto.css("filter", "");
+
+        //Realizo nueva búsqueda
+        if (searchText.trim() != "") {
+            var elementosConTexto = $("tr:contains('" + searchText + "')");
+            elementosConTexto.css("background-color", "#FFFFCC");
+            var elementosConTexto = $(".card:not(:contains('" + searchText + "'))");
+            elementosConTexto.css("filter", "grayscale(80%)");
+        }
+    }
 
     $(".card").draggable({
         scroll: true,
@@ -73,6 +75,11 @@ $(document).ready(function () {
     });
     
     LoadLinks();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get('q') ?? "";
+
+    Search(q);
 
     function LoadLinks()
     {
@@ -142,3 +149,4 @@ $(document).ready(function () {
     }
     
 });
+
