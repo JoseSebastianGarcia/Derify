@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDerify("Server=.;Database=dbtest;Trusted_Connection=True;");
+builder.Services.AddDerify("Server=NTTD-5C8NNQ3\\NTTDATA;Database=dbtest;User Id=sa;Password=Indiana2028.-;TrustServerCertificate=True");
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

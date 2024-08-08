@@ -51,8 +51,7 @@ namespace Derify.Core
 
                     if (htmlBuilder != null)
                     {
-                        if(code != string.Empty)
-                            htmlBuilder.Replace("$(content)", code);
+                        htmlBuilder.Replace("$(content)", code);
 
                         htmlBuilder.Replace("$(path)", _options.PathMatch.Value.Substring(1, _options.PathMatch.Value.Length - 1));
 
@@ -105,7 +104,8 @@ namespace Derify.Core
             if (IsValidHttpVerb(httpContext.Request.Method))
             {
                 if (!request.Path.HasValue)
-                    await GetStream(httpContext, "index.html", service.GetCode());
+                    
+                    await GetStream(httpContext, "index.html", service.GetCode(httpContext));
                 else
                     await GetStream(httpContext, request.Path.Value.TrimStart('/'));
             }

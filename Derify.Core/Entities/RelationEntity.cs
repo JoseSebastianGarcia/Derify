@@ -8,7 +8,9 @@ namespace Derify.Core.Entities
 {
     public class RelationEntity
     {
+        public string SchemaName { get; set; } = string.Empty;
         public string TableName { get; set; } = string.Empty;
+        public string FullTableName { get; set; } = string.Empty;
         public string FieldName { get; set; } = string.Empty;
         public string FieldDataType { get; set; } = string.Empty;
         public bool IsPrimaryKey { set; get; }
