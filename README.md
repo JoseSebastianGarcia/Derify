@@ -29,3 +29,6 @@ You can select many fields as you want by pressing **Ctrl button** and **left mo
 v2.1.6
 You can share a /derify?q=FieldName URL so other people can see what you want them to see
 
+v2.2.7
+You can filter from queryString using Schemes, OmmitTables, OnlyTables 's attributes.
+/derify?**schemes**=dbo,another**&ommitTables**=users,roles**&onlyTables**=users,roles,grants
