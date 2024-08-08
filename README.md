@@ -27,7 +27,10 @@ Now we can hightlight some column with certaint value
 You can select many fields as you want by pressing **Ctrl button** and **left mouse click**
 
 v2.1.6
-You can share a /derify?q=FieldName URL so other people can see what you want them to see
+You can share a /derify?q=FieldName URL so other people can see what you want them to see. **Case-Sensitive** **Ctrl+B**
+```url
+/derify?q=FieldName
+```
 
 v2.2.7
 You can filter from queryString using Schemes, OmmitTables, OnlyTables 's attributes.
