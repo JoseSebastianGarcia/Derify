@@ -31,4 +31,6 @@ You can share a /derify?q=FieldName URL so other people can see what you want th
 
 v2.2.7
 You can filter from queryString using Schemes, OmmitTables, OnlyTables 's attributes.
-/derify?**schemes**=dbo,another**&ommitTables**=users,roles**&onlyTables**=users,roles,grants
+```url
+/derify?schemes=dbo,another&ommitTables=users,roles&onlyTables=users,roles,grants
+```
