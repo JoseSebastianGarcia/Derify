@@ -17,7 +17,7 @@ Using this library, you will be able to provide a "/Derify" endpoint to automati
     <Authors>Jose Sebastian Garcia</Authors>
     <AssemblyVersion>2.1.6</AssemblyVersion>
     <FileVersion>2.1.6</FileVersion>
-    <Version>2.1.6</Version>
+    <Version>2.2.7</Version>
   </PropertyGroup>
 
   <ItemGroup>
