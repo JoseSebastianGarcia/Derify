@@ -1,15 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
+﻿using Derify.Core.Reponse;
 
-namespace Derify.Core.Services
+namespace Derify.Core.Services;
+
+public interface IDerifyService
 {
-    public interface IDerifyService
-    {
-        string GetCode(HttpContext context);
-    }
+	GetDatabaseSchemaResponse GetDatabaseSchema();
 }

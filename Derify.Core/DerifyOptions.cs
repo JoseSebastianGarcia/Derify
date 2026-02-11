@@ -1,21 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Derify.Core
+namespace Derify.Core;
+
+public class DerifyOptions
 {
-    public class DerifyOptions
-    {
-		private PathString pathMatch = "/Derify";
+    public PathString UiPathMatch { get; init; } = "/derify";
+	public PathString ApiPathMatch { get; init; } = "/api/derify";
 
-		public PathString PathMatch
-		{
-			get { return pathMatch; }
-			set { pathMatch = value; }
-		}
-
-	}
+	private DerifyOptions(string uiPathMatch, string apiPathMatch) 
+		=> (UiPathMatch, ApiPathMatch) = (uiPathMatch, apiPathMatch);
+	public static DerifyOptions Create(string uiPathMatch, string apiPathMatch) => new DerifyOptions(uiPathMatch, apiPathMatch);
 }
+
