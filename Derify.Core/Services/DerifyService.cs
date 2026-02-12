@@ -11,55 +11,62 @@ public class DerifyService : IDerifyService
     private readonly IBaseRepository _baseRepository;
     public DerifyService(IBaseRepository repository) => _baseRepository = repository;
     
-    public GetDatabaseSchemaResponse GetDatabaseSchema()
+    public Result<GetDatabaseSchemaResponse> GetDatabaseSchema()
 	{
-		List<RelationEntity> relationEntities = _baseRepository.GetAll();
-
-        GetDatabaseSchemaResponse getDatabaseSchemaResponse = new GetDatabaseSchemaResponse();
-
-        
-        relationEntities.GroupBy(re => re.SchemaName).ToList().ForEach(g =>
+        try
         {
-            Schema schema = new Schema() { Name = g.Key, Tables = new List<Table>() };
-            g.GroupBy(r => r.TableName).ToList().ForEach(t =>
+            List<RelationEntity> relationEntities = _baseRepository.GetAll();
+
+            GetDatabaseSchemaResponse getDatabaseSchemaResponse = new GetDatabaseSchemaResponse();
+
+
+            relationEntities.GroupBy(re => re.SchemaName).ToList().ForEach(g =>
             {
-                Table table = new Table() {Id = t.First().FullTableName, Name = t.First().TableName, Schema = t.First().SchemaName, Columns = new List<Column>() };
-                t.ToList().ForEach(f =>
+                Schema schema = new Schema() { Name = g.Key, Tables = new List<Table>() };
+                g.GroupBy(r => r.TableName).ToList().ForEach(t =>
                 {
-                    Column field = new Column()
+                    Table table = new Table() { Id = t.First().FullTableName, Name = t.First().TableName, Schema = t.First().SchemaName, Columns = new List<Column>() };
+                    t.ToList().ForEach(f =>
                     {
-                        Name = f.FieldName,
-                        Type = f.FieldDataType,
-                        IsPK = f.IsPrimaryKey,
-                        IsFK = f.IsForeignKey,
-                        IsUK = f.IsUnique,
-                        IsAutoIncrement = f.IsAutoincrement,
-                        Nullable = f.Nulleable,
-                        DefaultValue = f.Default,
-                        FkReferencesColumn = string.IsNullOrEmpty(f.ReferencedField) ? null: f.ReferencedField,
-                        FkReferencesTable = string.IsNullOrEmpty(f.FullReferencedTable) ? null : f.FullReferencedTable
-					};
-                    table.Columns.Add(field);
+                        Column field = new Column()
+                        {
+                            Name = f.FieldName,
+                            Type = f.FieldDataType,
+                            IsPK = f.IsPrimaryKey,
+                            IsFK = f.IsForeignKey,
+                            IsUK = f.IsUnique,
+                            IsAutoIncrement = f.IsAutoincrement,
+                            Nullable = f.Nulleable,
+                            DefaultValue = f.Default,
+                            FkReferencesColumn = string.IsNullOrEmpty(f.ReferencedField) ? null : f.ReferencedField,
+                            FkReferencesTable = string.IsNullOrEmpty(f.FullReferencedTable) ? null : f.FullReferencedTable
+                        };
+                        table.Columns.Add(field);
+                    });
+                    schema.Tables.Add(table);
                 });
-                schema.Tables.Add(table);
+                getDatabaseSchemaResponse.Schemas.Add(schema);
             });
-            getDatabaseSchemaResponse.Schemas.Add(schema);
-        });
 
-		//And now relations
-		relationEntities.Where(re => re.IsForeignKey).ToList().ForEach(relation =>
-        {
-            getDatabaseSchemaResponse.Relationships.Add(new Relationship()
+            //And now relations
+            relationEntities.Where(re => re.IsForeignKey).ToList().ForEach(relation =>
             {
-                Id = $"FK_{relation.TableName}_{relation.FieldName}_{relation.ReferencedTable ?? ""}_{relation.ReferencedField ?? ""}",
-				SourceTable = relation.FullTableName,
-                SourceColumn = relation.FieldName,
-                TargetTable = relation.FullReferencedTable ?? "",
-                TargetColumn = relation.ReferencedField ?? "",
-                Cardinality = "N:1"
+                getDatabaseSchemaResponse.Relationships.Add(new Relationship()
+                {
+                    Id = $"FK_{relation.TableName}_{relation.FieldName}_{relation.ReferencedTable ?? ""}_{relation.ReferencedField ?? ""}",
+                    SourceTable = relation.FullTableName,
+                    SourceColumn = relation.FieldName,
+                    TargetTable = relation.FullReferencedTable ?? "",
+                    TargetColumn = relation.ReferencedField ?? "",
+                    Cardinality = "N:1"
+                });
             });
-        });
 
-        return getDatabaseSchemaResponse;
+            return Result<GetDatabaseSchemaResponse>.Success(getDatabaseSchemaResponse,"Database schema retrieved successfully!");
+        }
+        catch(Exception ex)
+        {
+            return Result<GetDatabaseSchemaResponse>.Failure("An error occurred while retrieving the database schema", ex, "An unhandled error occurred!");
+        }
 	}
 }

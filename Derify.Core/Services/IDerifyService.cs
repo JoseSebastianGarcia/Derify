@@ -4,5 +4,5 @@ namespace Derify.Core.Services;
 
 public interface IDerifyService
 {
-	GetDatabaseSchemaResponse GetDatabaseSchema();
+	Result<GetDatabaseSchemaResponse> GetDatabaseSchema();
 }

@@ -11,6 +11,15 @@ builder.Services.AddDerify("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(builder =>
+{
+    builder.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -23,9 +32,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+app.UseDerify();
+
 app.UseAuthorization();
 
-app.UseDerify();
 
 
 app.MapControllers();

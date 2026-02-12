@@ -1,4 +1,0 @@
-{
-    "baseUi": "$(base.ui)",
-    "baseApi": "$(base.api)"
-}
