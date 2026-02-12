@@ -1,39 +1,109 @@
-# Derify
+# Derify v3
 
-## How to use
-You have AddDerify(connection_string) and UseDerify(). Simply add both methods.
+  ----------------
+  ENGLISH README
+  ----------------
+
+## Derify v3 released
+
+Derify is a .NET middleware that automatically generates an interactive
+Entity-Relationship Diagram (ERD) from your SQL Server database schema
+and displays it directly in your browser.
+
+Derify's mission is simple but powerful: Turn complex databases into
+clear, explorable diagrams in seconds.
+
+### How to use
+
+1. Add Derify to your application:
+builder.Services.AddDerify(connectionString);
+2. Enable the middleware:
+app.UseDerify();
+3. Run your application (you will need a running SQL Server instance) and
+navigate to: https://yourdomain.com/derify/
+4. That's it. Derify will automatically scan your database and render a
+live, interactive ERD in your browser.
 ![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/25f4aa40-5026-433e-a354-a464d2e5ae0a)
 
-Next, you can run the test solution (you will need an sql server instance) and visit "domain/Derify".
+### Diagramming engine
 
-That's all, automatically the middleware will generate an ERD from your database.
+The diagramming engine was built manually from scratch to ensure full
+technical control, performance, and accuracy. AI assistance was used to
+refine the UI/UX --- improving clarity, navigation, and visual
+consistency without compromising engineering quality.
 
-## Diagramming engine
-Written manually with jquery and jqueryui
+### Key Features (v3)
 
+-   Built for .NET 10+
+-   Improved and more visible search for schemas, tables, and columns
+-   Toggleable minimap
+-   Smooth Zoom In and Zoom Out
+-   Zoom-to-fit for the entire diagram
+-   Automatic table layout
+-   Save snapshots of table positions and visibility
+-   Load snapshots to restore previous views
+-   Improved relationship and cardinality visualization
+-   Print-ready diagrams
+-   Export the diagram as an image
+-   Show and hide schemas and tables
+-   Tables display their column count
+-   Light and Dark theme toggle
+
+  ----------------
+  ESPAÑOL README
+  ----------------
+
+## Derify v3 ya está disponible
+
+Derify es un middleware para .NET que genera automáticamente un diagrama
+entidad-relación (ERD) a partir del esquema de tu base de datos SQL
+Server y lo muestra de forma interactiva en el navegador.
+
+El objetivo de Derify es claro y práctico: Convertir bases de datos
+complejas en diagramas claros y explorables en segundos.
+
+### Cómo usarlo
+
+1. Agregá Derify a tu aplicación:
+builder.Services.AddDerify(connectionString);
+2. Activá el middleware:
+app.UseDerify();
+3. Ejecutá tu solución (necesitás una instancia activa de SQL Server) y
+abrí en el navegador: https://tudominio.com/derify/
+4. Listo. Derify analizará tu base de datos y generará automáticamente un
+ERD interactivo en pantalla.
+![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/25f4aa40-5026-433e-a354-a464d2e5ae0a)
+
+### Motor de diagramación
+
+El motor de visualización fue desarrollado manualmente desde cero para
+garantizar precisión, rendimiento y control técnico total. Se utilizó
+asistencia de IA para refinar la interfaz y la experiencia de usuario
+--- mejorando claridad, navegación y coherencia visual sin perder
+calidad de ingeniería.
+
+### Características principales (v3)
+
+-   Compatible con .NET 10+
+-   Búsqueda de esquemas, tablas y campos mejorada y más visible
+-   Minimap activable y desactivable
+-   Zoom In y Zoom Out fluido
+-   Zoom para ajustar todo el diagrama
+-   Auto-layout de tablas
+-   Guardar snapshots de posición y visibilidad de tablas
+-   Cargar snapshots de visualizaciones previas
+-   Relaciones y cardinalidades mejoradas
+-   Opción de impresión
+-   Exportar el diagrama como imagen
+-   Mostrar y ocultar esquemas y tablas
+-   Las tablas muestran cantidad de columnas
+-   Modo claro y oscuro
 
 ## Snapshot
-![image](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/e4782ef1-0bc4-4368-bd6b-25398da26c76)
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/0e073e8f-311a-4bb5-a31b-67f0d94017b3" />
 
 
-CTRL+B or magnifying glass
-![a](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/f5217f74-32ea-4c9b-8e03-d1f95c4c9c00)
 
 
-Now we can hightlight some column with certaint value
-![b](https://github.com/JoseSebastianGarcia/Derify/assets/94945762/f05cbbc4-7925-4e1a-98d8-20593060c60e)
-
-
-You can select many fields as you want by pressing **Ctrl button** and **left mouse click**
-
-v2.1.6
-You can share a /derify?q=FieldName URL so other people can see what you want them to see. **Case-Sensitive** **Ctrl+B**
-```url
-/derify?q=FieldName
-```
-
-v2.2.7
-You can filter from queryString using Schemes, OmmitTables, OnlyTables 's attributes.
-```url
-/derify?schemas=dbo,another&ommitTables=users,roles&onlyTables=users,roles,grants
-```
+¡Nos vemos dentro! 
+Made with ❤️ by Sebastián Garcia
