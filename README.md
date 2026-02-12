@@ -49,6 +49,17 @@ consistency without compromising engineering quality.
 -   Tables display their column count
 -   Light and Dark theme toggle
 
+
+## Snapshot
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/0e073e8f-311a-4bb5-a31b-67f0d94017b3" />
+
+
+
+
+¡See you inside! 
+Made with ❤️ by Sebastian Garcia
+
+
   ----------------
   ESPAÑOL README
   ----------------
@@ -106,4 +117,4 @@ calidad de ingeniería.
 
 
 ¡Nos vemos dentro! 
-Made with ❤️ by Sebastián Garcia
+Hecho con ❤️ por Sebastián Garcia
