@@ -7,10 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDerify("Server=NTTD-5C8NNQ3\\NTTDATA;Database=dbtest;User Id=sa;Password=Indiana2028.-;TrustServerCertificate=True");
+builder.Services.AddDerify("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=derifyDemo;Integrated Security=True;");
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(builder =>
+{
+    builder.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -23,9 +32,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
+app.UseDerify();
+
 app.UseAuthorization();
 
-app.UseDerify();
+
 
 app.MapControllers();
 

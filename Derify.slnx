@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Elementos de la solución/">
+    <File Path="LICENSE.txt" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Derify.Core/Derify.Core.csproj" />
+  <Project Path="Derify.Demo/Derify.Demo.csproj" />
+</Solution>

@@ -16,8 +16,13 @@ namespace Derify.Core.Entities
         public bool IsPrimaryKey { set; get; }
         public bool IsUnique { set; get; }
         public bool IsForeignKey { set; get; }
-        public string? ReferencedBy { get; set; }
-        public string Nulleable { get; set; } = string.Empty;
+        public bool IsAutoincrement { set; get; }
+        public string? ReferencedSchema { get; set; }
+		public string? ReferencedTable { get; set; }
+		public string? ReferencedField { get; set; }
+		public string? FullReferencedTable { get; set; }
+		public string? FullReferencedField { get; set; }
+		public bool Nulleable { get; set; }
         public string Default { get; set; } = string.Empty;
     }
 }
