@@ -1,10 +1,10 @@
-# Derify v3
+# Derify v3.1
 
   ----------------
   ENGLISH README
   ----------------
 
-## Derify v3 released
+## Derify v3.1 released
 
 Derify is a .NET middleware that automatically generates an interactive
 Entity-Relationship Diagram (ERD) from your SQL Server database schema
@@ -31,6 +31,12 @@ The diagramming engine was built manually from scratch to ensure full
 technical control, performance, and accuracy. AI assistance was used to
 refine the UI/UX --- improving clarity, navigation, and visual
 consistency without compromising engineering quality.
+
+### Key Features (v3.1)
+-   Inverse table and schema toggle
+-   Theme selection
+-   Table drag selection
+-   Table pick (ctrl + left click)
 
 ### Key Features (v3)
 
@@ -64,7 +70,7 @@ Made with ❤️ by Sebastian Garcia
   ESPAÑOL README
   ----------------
 
-## Derify v3 ya está disponible
+## Derify v3.1 ya está disponible
 
 Derify es un middleware para .NET que genera automáticamente un diagrama
 entidad-relación (ERD) a partir del esquema de tu base de datos SQL
@@ -92,6 +98,12 @@ garantizar precisión, rendimiento y control técnico total. Se utilizó
 asistencia de IA para refinar la interfaz y la experiencia de usuario
 --- mejorando claridad, navegación y coherencia visual sin perder
 calidad de ingeniería.
+
+### Características principales (v3.1)
+-   Seleccion inversa de tablas y esquemas.
+-   Selección de temas
+-   Selección de tablas por arrastre del mouse
+-   Selección múltiple de tablas (ctrl + left click)
 
 ### Características principales (v3)
 
