@@ -57,7 +57,10 @@ consistency without compromising engineering quality.
 
 
 ## Snapshot
-<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/0e073e8f-311a-4bb5-a31b-67f0d94017b3" />
+<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/684089c1-6ca1-4033-8783-39497e00365d" />
+<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/23c327a7-22db-4653-b262-6e4c55712c7c" />
+<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/6167f6dc-0af7-4ca8-8ddd-766021d7f1c7" />
+<img width="1919" height="875" alt="image" src="https://github.com/user-attachments/assets/ec43764a-df0c-44ac-a87d-1ba1fcc75329" />
 
 
 
@@ -123,7 +126,11 @@ calidad de ingeniería.
 -   Modo claro y oscuro
 
 ## Snapshot
-<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/0e073e8f-311a-4bb5-a31b-67f0d94017b3" />
+<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/684089c1-6ca1-4033-8783-39497e00365d" />
+<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/23c327a7-22db-4653-b262-6e4c55712c7c" />
+<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/6167f6dc-0af7-4ca8-8ddd-766021d7f1c7" />
+<img width="1919" height="875" alt="image" src="https://github.com/user-attachments/assets/ec43764a-df0c-44ac-a87d-1ba1fcc75329" />
+
 
 
 
