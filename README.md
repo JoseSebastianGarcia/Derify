@@ -67,6 +67,7 @@ consistency without compromising engineering quality.
 <img width="1919" height="884" alt="image" src="https://github.com/user-attachments/assets/e4e76f89-0c8b-46c2-a13d-e6780044dc6d" />
 <img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/d9a2b90e-309c-49db-8667-c1950e723e84" />
 <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/3662fa91-e56e-4756-949f-b4278d839d78" />
+<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/b8a326d8-0d45-4e68-bd4c-589ebd466c89" />
 
 
 
@@ -142,6 +143,7 @@ calidad de ingeniería.
 <img width="1919" height="884" alt="image" src="https://github.com/user-attachments/assets/e4e76f89-0c8b-46c2-a13d-e6780044dc6d" />
 <img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/d9a2b90e-309c-49db-8667-c1950e723e84" />
 <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/3662fa91-e56e-4756-949f-b4278d839d78" />
+<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/b8a326d8-0d45-4e68-bd4c-589ebd466c89" />
 
 
 
