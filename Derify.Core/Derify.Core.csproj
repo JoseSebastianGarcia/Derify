@@ -15,9 +15,9 @@ Using this library, you will be able to provide a "/derify/" endpoint to automat
     <Company></Company>
     <Product>Derify</Product>
     <Authors>Jose Sebastian Garcia</Authors>
-    <AssemblyVersion>3.1.0</AssemblyVersion>
-    <FileVersion>3.1.0</FileVersion>
-    <Version>3.1.0</Version>
+    <AssemblyVersion>3.2.0</AssemblyVersion>
+    <FileVersion>3.2.0</FileVersion>
+    <Version>3.2.0</Version>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
