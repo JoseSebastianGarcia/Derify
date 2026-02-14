@@ -1,10 +1,10 @@
-# Derify v3.1
+# Derify v3.2
 
   ----------------
   ENGLISH README
   ----------------
 
-## Derify v3.1 released
+## Derify v3.2 released
 
 Derify is a .NET middleware that automatically generates an interactive
 Entity-Relationship Diagram (ERD) from your SQL Server database schema
@@ -32,6 +32,13 @@ technical control, performance, and accuracy. AI assistance was used to
 refine the UI/UX --- improving clarity, navigation, and visual
 consistency without compromising engineering quality.
 
+### Características principales (v3.2)
+-   Shareable links (share button)
+-   Highlight individual & group selection
+-   Redo & Undo
+-   Reset View
+-   Show only related to selection
+
 ### Key Features (v3.1)
 -   Inverse table and schema toggle
 -   Theme selection
@@ -57,10 +64,9 @@ consistency without compromising engineering quality.
 
 
 ## Snapshot
-<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/684089c1-6ca1-4033-8783-39497e00365d" />
-<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/23c327a7-22db-4653-b262-6e4c55712c7c" />
-<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/6167f6dc-0af7-4ca8-8ddd-766021d7f1c7" />
-<img width="1919" height="875" alt="image" src="https://github.com/user-attachments/assets/ec43764a-df0c-44ac-a87d-1ba1fcc75329" />
+<img width="1919" height="884" alt="image" src="https://github.com/user-attachments/assets/e4e76f89-0c8b-46c2-a13d-e6780044dc6d" />
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/d9a2b90e-309c-49db-8667-c1950e723e84" />
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/3662fa91-e56e-4756-949f-b4278d839d78" />
 
 
 
@@ -73,7 +79,7 @@ Made with ❤️ by Sebastian Garcia
   ESPAÑOL README
   ----------------
 
-## Derify v3.1 ya está disponible
+## Derify v3.2 ya está disponible
 
 Derify es un middleware para .NET que genera automáticamente un diagrama
 entidad-relación (ERD) a partir del esquema de tu base de datos SQL
@@ -102,6 +108,13 @@ asistencia de IA para refinar la interfaz y la experiencia de usuario
 --- mejorando claridad, navegación y coherencia visual sin perder
 calidad de ingeniería.
 
+### Características principales (v3.2)
+-   Enlaces compartibles (Botón compatir)
+-   Muestra seleccion puntual y grupal
+-   Redo & Undo
+-   Resetear vista a como si no se hubiera hecho nada
+-   Mostrar unicamente tablas relacionadas a la selección
+
 ### Características principales (v3.1)
 -   Seleccion inversa de tablas y esquemas.
 -   Selección de temas
@@ -126,12 +139,9 @@ calidad de ingeniería.
 -   Modo claro y oscuro
 
 ## Snapshot
-<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/684089c1-6ca1-4033-8783-39497e00365d" />
-<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/23c327a7-22db-4653-b262-6e4c55712c7c" />
-<img width="1919" height="876" alt="image" src="https://github.com/user-attachments/assets/6167f6dc-0af7-4ca8-8ddd-766021d7f1c7" />
-<img width="1919" height="875" alt="image" src="https://github.com/user-attachments/assets/ec43764a-df0c-44ac-a87d-1ba1fcc75329" />
-
-
+<img width="1919" height="884" alt="image" src="https://github.com/user-attachments/assets/e4e76f89-0c8b-46c2-a13d-e6780044dc6d" />
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/d9a2b90e-309c-49db-8667-c1950e723e84" />
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/3662fa91-e56e-4756-949f-b4278d839d78" />
 
 
 
