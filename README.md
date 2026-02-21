@@ -1,7 +1,8 @@
 # Derify v3.2
 
+
   ----------------
-  ENGLISH README
+#  ENGLISH README
   ----------------
 
 ## Derify v3.2 released
@@ -69,7 +70,35 @@ consistency without compromising engineering quality.
 <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/3662fa91-e56e-4756-949f-b4278d839d78" />
 <img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/b8a326d8-0d45-4e68-bd4c-589ebd466c89" />
 
+## Demo
+### docker-compose.yml
+```yml
+services:
+  derify-demo:
+    container_name: derify-demo
+    image: "josesebastiangarcia/derifyapi:3.2.0"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      ConnectionStrings__Default: "Server=sqlserver-fts;Database=DerifyDemo;User Id=sa;Password=StrongP@ssw0rd!;TrustServerCertificate=True;"
+  
+  database:
+    container_name: sqlserver-fts
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "StrongP@ssw0rd!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - db_data:/var/opt/mssql
 
+volumes:
+  db_data:
+    driver: local
+```
 
 
 ¡See you inside! 
@@ -77,7 +106,7 @@ Made with ❤️ by Sebastian Garcia
 
 
   ----------------
-  ESPAÑOL README
+#  ESPAÑOL README
   ----------------
 
 ## Derify v3.2 ya está disponible
@@ -145,6 +174,35 @@ calidad de ingeniería.
 <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/3662fa91-e56e-4756-949f-b4278d839d78" />
 <img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/b8a326d8-0d45-4e68-bd4c-589ebd466c89" />
 
+## Demo
+### docker-compose.yml
+```yml
+services:
+  derify-demo:
+    container_name: derify-demo
+    image: "josesebastiangarcia/derifyapi:3.2.0"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    environment:
+      ConnectionStrings__Default: "Server=sqlserver-fts;Database=DerifyDemo;User Id=sa;Password=StrongP@ssw0rd!;TrustServerCertificate=True;"
+  
+  database:
+    container_name: sqlserver-fts
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "StrongP@ssw0rd!"
+    ports:
+      - "1433:1433"
+    volumes:
+      - db_data:/var/opt/mssql
+
+volumes:
+  db_data:
+    driver: local
+```
 
 
 ¡Nos vemos dentro! 
